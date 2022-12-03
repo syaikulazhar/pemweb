@@ -18,8 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/page1', [controllernwind::class, 'viewall']);
+Route::get('/page1', [controllernwind::class, 'viewall']); //page 1
 
-Route::get('/page1/{CategoryID}', [controllernwind::class, 'viewproducts']);
+Route::get('/page2/{CategoryID}', [controllernwind::class, 'viewproducts']); //page 2
 
-Route::get('/page3/{ProductID}', [controllernwind::class, 'viewdetailproducts']);
+Route::get('/page3/{ProductID}', [controllernwind::class, 'viewdetailproducts']); //page 3

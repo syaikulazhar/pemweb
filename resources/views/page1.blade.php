@@ -10,7 +10,7 @@
 
 <body>
     @foreach($selectall AS $selectall)
-    <a href="/page1/{{$selectall->CategoryID}}" style="font-size: 25px;">
+    <a href="/page2/{{$selectall->CategoryID}}" style="font-size: 25px;">
         {{$selectall->CategoryName}}
     </a>
     <br>
