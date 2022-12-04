@@ -29,9 +29,21 @@ class controllernwind extends Controller
         return view('page3', compact(['detailproducts']));
     }
 
-    public function viewcart()
+    public function sessioncart(Request $view)
     {
-        Session::put('name', 'ProductID');
-        return view('viewcart');
+        $view->session()->put('ProductName', $view->ProductName);
+        $view->session()->put('qty', $view->qty);
+        $view->session()->put('UnitPrice', $view->UnitPrice);
+        $view->session()->put('total', $total = $view->UnitPrice * $view->qty);
+        return view('page4');
+    }
+
+    public function viewcart(Request $view)
+    {
+        if ($view->session()->has('ProductName') && $view->session()->has('qty') && $view->session()->has('UnitPrice') && $view->session()->has('total')) {
+            return view('page5', compact(['view']));
+        } else {
+            echo 'Tidak ada data dalam session.';
+        }
     }
 }

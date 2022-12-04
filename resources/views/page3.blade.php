@@ -40,9 +40,12 @@
     </table>
     <br>
     <br>
-    <form action="">
-        Mau beli berapa?
-        <input type="number" name="jumlah">
+    <form action="{{ route('komang') }}" method="POST">
+        Quantity
+        <input type="hidden" name="ProductName" value="{{$detailproducts->ProductName}}">
+        <input type="hidden" name="UnitPrice" value="{{$detailproducts->UnitPrice}}">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <input type="number" name="qty">
         <input type="submit" value="Add to Cart">
     </form>
 </body>

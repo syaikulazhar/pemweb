@@ -23,3 +23,7 @@ Route::get('/page1', [controllernwind::class, 'viewall']); //page 1
 Route::get('/page2/{CategoryID}', [controllernwind::class, 'viewproducts']); //page 2
 
 Route::get('/page3/{ProductID}', [controllernwind::class, 'viewdetailproducts']); //page 3
+
+Route::post('/page4', [controllernwind::class, 'sessioncart'])->name('komang'); //page 4 input session
+
+Route::get('/page5', [controllernwind::class, 'viewcart'])->name('usercart'); //page 5 read session
